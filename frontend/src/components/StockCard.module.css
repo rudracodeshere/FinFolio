@@ -1,0 +1,91 @@
+.card {
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  /* 12px */
+  padding: 1rem;
+  /* 16px */
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  transition: all 0.2s ease-in-out;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.symbol {
+  font-weight: 700;
+  font-size: 1.25rem;
+  /* 20px */
+  color: #1e293b;
+}
+
+.price {
+  font-size: 2rem;
+  /* 32px */
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.change {
+  font-size: 1.125rem;
+  /* 18px */
+  font-weight: 600;
+}
+
+.positive {
+  color: #16a34a;
+  /* Green */
+}
+
+.negative {
+  color: #dc2626;
+  /* Red */
+}
+
+.loading,
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  height: 100%;
+}
+
+.error {
+  background-color: #fef2f2;
+  border-color: #fecaca;
+  color: #b91c1c;
+}
+
+.removeButton {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #9ca3af;
+  /* A light gray color */
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+  opacity: 0.5;
+  transition: all 0.2s;
+}
+
+.removeButton:hover {
+  color: #ef4444;
+  /* Red on hover */
+  opacity: 1;
+  transform: scale(1.2);
+}
