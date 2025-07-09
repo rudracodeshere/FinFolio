@@ -40,7 +40,7 @@ router.get('/watchlist', auth, async (req, res) => {
 
 router.get('/quote/:ticker', auth, async (req, res) => {
   const ticker = req.params.ticker.toUpperCase();
-  const apiKey = process.env.ALPHA_VANTAGE_API_KEY;
+  const apiKey = "N4B35E5NZ8TIVNIE";
   const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${ticker}&apikey=${apiKey}`;
 
   try {
@@ -75,7 +75,7 @@ router.get('/quote/:ticker', auth, async (req, res) => {
 // @access  Private
 router.get('/history/:ticker', auth, async (req, res) => {
   const ticker = req.params.ticker.toUpperCase();
-  const apiKey = process.env.ALPHA_VANTAGE_API_KEY;
+  const apiKey = "N4B35E5NZ8TIVNIE";
 
   // THE FIX IS HERE: Using the more reliable TIME_SERIES_DAILY function
   const url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}&outputsize=compact&apikey=${apiKey}`;
