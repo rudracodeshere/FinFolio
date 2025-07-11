@@ -3,6 +3,9 @@ const router = express.Router();
 const auth = require('../middleware/auth');
 const User = require('../models/User');
 const axios = require('axios');
+const dotenv = require('dotenv');
+dotenv.config();
+
 router.post('/watchlist', auth, async (req, res) => {
   const { ticker } = req.body;
 
@@ -40,7 +43,7 @@ router.get('/watchlist', auth, async (req, res) => {
 
 router.get('/quote/:ticker', auth, async (req, res) => {
   const ticker = req.params.ticker.toUpperCase();
-  const apiKey = "N4B35E5NZ8TIVNIE";
+  const apiKey = process.env.ALPHA_VANTAGE_API_KEY; // <-- use env variable
   const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${ticker}&apikey=${apiKey}`;
 
   try {
@@ -75,9 +78,7 @@ router.get('/quote/:ticker', auth, async (req, res) => {
 // @access  Private
 router.get('/history/:ticker', auth, async (req, res) => {
   const ticker = req.params.ticker.toUpperCase();
-  const apiKey = "N4B35E5NZ8TIVNIE";
-
-  // THE FIX IS HERE: Using the more reliable TIME_SERIES_DAILY function
+  const apiKey = process.env.ALPHA_VANTAGE_API_KEY; // <-- use env variable
   const url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}&outputsize=compact&apikey=${apiKey}`;
 
   try {
