@@ -18,7 +18,7 @@ const addStock = (ticker, token) => {
   return axios.post(API_URL + '/watchlist', { ticker }, getAuthHeader(token));
 };
 const getQuote = (ticker, token) => {
-  return axios.get(`${API_URL}/quote/${ticker}`, getAuthHeader(token));
+  return axios.get(`${API_URL}/quote/${ticker}`);
 };
 const getHistory = (ticker, token) => {
   return axios.get(`${API_URL}/history/${ticker}`, getAuthHeader(token));

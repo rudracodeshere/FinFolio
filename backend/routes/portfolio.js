@@ -3,8 +3,6 @@ const router = express.Router();
 const auth = require('../middleware/auth');
 const Holding = require('../models/Holding');
 const axios = require('axios');
-const dotenv = require('dotenv');
-dotenv.config();
 
 // @route   POST api/portfolio
 // @desc    Add a new holding by specifying money spent
@@ -24,7 +22,7 @@ router.post('/', auth, async (req, res) => {
     }
 
     // 2. Fetch the current stock price from Alpha Vantage
-    const apiKey = process.env.ALPHA_VANTAGE_API_KEY; // <-- use env variable
+    const apiKey = "N4B35E5NZ8TIVNIE";
     const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${ticker}&apikey=${apiKey}`;
     const alphaVantageRes = await axios.get(url);
     const quoteData = alphaVantageRes.data['Global Quote'];
