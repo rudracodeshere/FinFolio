@@ -44,7 +44,7 @@ router.get('/watchlist', auth, async (req, res) => {
 router.get('/quote/:ticker', auth, async (req, res) => {
   const ticker = req.params.ticker.toUpperCase();
   const apiKey = process.env.ALPHA_VANTAGE_API_KEY; // <-- use env variable
-  const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${ticker}&apikey=${apiKey}`;
+  const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${ticker}&apikey=N4B35E5NZ8TIVNIE`;
 
   try {
     const response = await axios.get(url);
